@@ -8,7 +8,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-const fileName = '/Users/rickzhang/Desktop/physics.png';
 
 async function detectText(fileName) {
 
