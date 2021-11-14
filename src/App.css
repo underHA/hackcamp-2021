@@ -36,3 +36,81 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-weight: 300;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  background-color: #F8F8F8;
+}
+
+
+/*PAGE SPECIFIC ITEMS*/
+
+.UI-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 30px;
+}
+
+.webcam-container {
+  width: 60%;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.webcam-feed {
+  margin: auto;
+  border-radius: 15px;
+}
+
+.keyInstr-container {
+  width: 60%;
+  height: 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.subtitles-container {
+  width: 60%;
+  height: 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 20px;
+
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
