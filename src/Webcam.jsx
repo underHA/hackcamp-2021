@@ -35,11 +35,9 @@ export const WebcamCapture = () => {
                     className="webcam-feed"
                 /> : <img src={image} />}
             </div>
-            <div>
-                <button onClick={(e) => {
-                        e.preventDefault();
-                        setInterval(function(){capture();}, 100);
-                    }}>Capture</button>
+
+            <div className="subtitles-container">
+                <p>The University of British Columbia</p>
             </div>
         </div>
     );
