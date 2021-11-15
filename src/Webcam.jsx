@@ -44,7 +44,6 @@ export const WebcamCapture = () => {
         };
     }, []);
 
-
     return (
         <div className="webcam-container">
             <div className="webcam-img">
