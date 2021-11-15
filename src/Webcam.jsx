@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Webcam from "react-webcam";
+import useSound from 'use-sound';
+import boopSfx from './sound.mp3';
 
 const WebcamComponent = () => <Webcam />;
 
@@ -27,6 +29,8 @@ export const WebcamCapture = () => {
             switch (event.key) {
                 case ' ':
                     capture();
+                    var audio = new Audio(boopSfx);
+                    audio.play();
                     break;
                 case 'q':
                     console.log("Bruh");
@@ -40,6 +44,7 @@ export const WebcamCapture = () => {
         };
     }, []);
 
+
     return (
         <div className="webcam-container">
             <div className="webcam-img">
@@ -52,11 +57,6 @@ export const WebcamCapture = () => {
                     className="webcam-feed"
                 /> : <img src={image} />}
             </div>
-
-                <button onClick={(e) => {
-                    e.preventDefault();
-                    setInterval(function(){capture();}, 100);
-                }}>Capture</button>
 
             <div className="subtitles-container">
                 <p>The University of British Columbia</p>
