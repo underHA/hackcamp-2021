@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Webcam from "react-webcam";
 
 const WebcamComponent = () => <Webcam />;
@@ -11,7 +11,7 @@ const videoConstraints = {
 };
 
 export const WebcamCapture = () => {
-
+    
     const [image,setImage]=useState('');
     const webcamRef = React.useRef(null);
 
@@ -20,7 +20,30 @@ export const WebcamCapture = () => {
             
         const imageSrc = webcamRef.current.getScreenshot();
         console.log(imageSrc);
+    });
+    
+    useEffect(() => {
+        document.addEventListener("keydown", function(event) {
+            switch (event.key) {
+                case ' ':
+                    capture();
+                    break;
+                case 'q':
+                    console.log("Bruh");
+                    break;
+            }
         });
+        return () => document.removeEventListener("keydown", function(event) {
+            switch (event.key) {
+                case ' ':
+                    capture();
+                    break;
+                case 'q':
+                    console.log("Bruh");
+                    break;
+            }
+        });
+    });
 
 
     return (
@@ -35,6 +58,11 @@ export const WebcamCapture = () => {
                     className="webcam-feed"
                 /> : <img src={image} />}
             </div>
+
+                <button onClick={(e) => {
+                    e.preventDefault();
+                    setInterval(function(){capture();}, 100);
+                }}>Capture</button>
 
             <div className="subtitles-container">
                 <p>The University of British Columbia</p>
