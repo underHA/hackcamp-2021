@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Webcam from "react-webcam";
+<<<<<<< HEAD
 import axios from "axios";
+=======
+import useSound from 'use-sound';
+import boopSfx from './sound.mp3';
+>>>>>>> 35d0b9677a16f650f3554a75523c3fef59294fef
 
 const WebcamComponent = () => <Webcam />;
 
@@ -51,6 +56,8 @@ export const WebcamCapture = () => {
             switch (event.key) {
                 case ' ':
                     capture();
+                    var audio = new Audio(boopSfx);
+                    audio.play();
                     break;
                 case 'q':
                     console.log("Bruh");
@@ -63,6 +70,7 @@ export const WebcamCapture = () => {
             window.removeEventListener('keydown', handleKey);
         };
     }, []);
+
 
     return (
         <div className="webcam-container">
@@ -77,11 +85,14 @@ export const WebcamCapture = () => {
                 /> : <img src={image} />}
             </div>
 
+<<<<<<< HEAD
             <button onClick={(e) => {
                 e.preventDefault();
                 setInterval(function () { capture(); }, 100);
             }}>Capture</button>
 
+=======
+>>>>>>> 35d0b9677a16f650f3554a75523c3fef59294fef
             <div className="subtitles-container">
                 <p>{text}</p>
             </div>
