@@ -1,5 +1,7 @@
-# hackcamp-2021
+# Eyelexa
 nwPlus HackCamp 2021
+
+[Hackathon Devpost](https://devpost.com/software/eyelexa-reading-assistant)
 
 Hanmin Kim  
 Lincoln Lee  
