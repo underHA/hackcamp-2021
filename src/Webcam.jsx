@@ -43,6 +43,9 @@ export const WebcamCapture = () => {
 
             wrap().then(result => {
                 setText(result.data);
+                var msg = new SpeechSynthesisUtterance();
+                msg.text = result.data;
+                window.speechSynthesis.speak(msg);
             }).catch(err => {
                 console.log(err);
             })
