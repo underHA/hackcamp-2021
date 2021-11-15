@@ -21,30 +21,24 @@ export const WebcamCapture = () => {
         const imageSrc = webcamRef.current.getScreenshot();
         console.log(imageSrc);
     });
-    
-    useEffect(() => {
-        document.addEventListener("keydown", function(event) {
-            switch (event.key) {
-                case ' ':
-                    capture();
-                    break;
-                case 'q':
-                    console.log("Bruh");
-                    break;
-            }
-        });
-        return () => document.removeEventListener("keydown", function(event) {
-            switch (event.key) {
-                case ' ':
-                    capture();
-                    break;
-                case 'q':
-                    console.log("Bruh");
-                    break;
-            }
-        });
-    });
 
+    useEffect(() => {
+        const handleKey = (event) => {
+            switch (event.key) {
+                case ' ':
+                    capture();
+                    break;
+                case 'q':
+                    console.log("Bruh");
+                    break;
+            }
+        };
+        window.addEventListener('keydown', handleKey);
+    
+        return () => {
+          window.removeEventListener('keydown', handleKey);
+        };
+    }, []);
 
     return (
         <div className="webcam-container">
