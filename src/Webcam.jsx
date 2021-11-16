@@ -1,8 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Webcam from "react-webcam";
-import useSound from 'use-sound';
-import boopSfx from './sound.mp3';
+import screenshotSound from './sound.mp3';
 
 const WebcamComponent = () => <Webcam />;
 
@@ -29,7 +28,8 @@ export const WebcamCapture = () => {
             switch (event.key) {
                 case ' ':
                     capture();
-                    var audio = new Audio(boopSfx);
+                    var audio = new Audio(screenshotSound);
+                    audio.volume = 0.5;
                     audio.play();
                     break;
                 case 'q':
